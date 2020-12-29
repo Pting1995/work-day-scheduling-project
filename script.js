@@ -142,9 +142,58 @@ function checkHour(hour) {
     }
 }
 
-// get messages to save
+// gets messages to save
 $(".btn1").click(function () {
-    var message1 = $("todo1")
-    
-    window.localStorage.setItem("#todo1", )
+    var message1 = $("#todo1").val()
+    window.localStorage.setItem("note1", message1)
+    $("#todo1").text(localStorage.getItem("note1"))
 })
+$(".btn2").click(function () {
+    var message2 = $("#todo2").val()
+    window.localStorage.setItem("note2", message2)
+    $("#todo2").text(localStorage.getItem("note2"))
+})
+$(".btn3").click(function () {
+    var message3 = $("#todo3").val()
+    window.localStorage.setItem("note3", message3)
+    $("#todo3").text(localStorage.getItem("note3"))
+})
+$(".btn4").click(function () {
+    var message4 = $("#todo4").val()
+    window.localStorage.setItem("note4", message4)
+    $("#todo4").text(localStorage.getItem("note4"))
+})
+$(".btn5").click(function () {
+    var message5 = $("#todo5").val()
+    window.localStorage.setItem("note5", message5)
+    $("#todo5").text(localStorage.getItem("note5"))
+})
+$(".btn6").click(function () {
+    var message6 = $("#todo6").val()
+    window.localStorage.setItem("note6", message6)
+    $("#todo6").text(localStorage.getItem("note6"))
+})
+$(".btn7").click(function () {
+    var message7 = $("#todo7").val()
+    window.localStorage.setItem("note7", message7)
+    $("#todo7").text(localStorage.getItem("note7"))
+})
+$(".btn8").click(function () {
+    var message8 = $("#todo8").val()
+    window.localStorage.setItem("note8", message8)
+    $("#todo8").text(localStorage.getItem("note8"))
+})
+$(".btn9").click(function () {
+    var message9 = $("#todo9").val()
+    window.localStorage.setItem("note9", message9)
+    $("#todo9").text(localStorage.getItem("note9"))
+})
+$("#todo1").text(localStorage.getItem("note1"))
+$("#todo2").text(localStorage.getItem("note2"))
+$("#todo3").text(localStorage.getItem("note3"))
+$("#todo4").text(localStorage.getItem("note4"))
+$("#todo5").text(localStorage.getItem("note5"))
+$("#todo6").text(localStorage.getItem("note6"))
+$("#todo7").text(localStorage.getItem("note7"))
+$("#todo8").text(localStorage.getItem("note8"))
+$("#todo9").text(localStorage.getItem("note9"))
