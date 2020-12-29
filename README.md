@@ -1,105 +1,56 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Work Day Scheduling Project
 
-## Your Task
+![Site picture](Assets/workdayproject.PNG)
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+This site was made to help you organize your day! It has an text box for each hour of the work day. The boxes turn white if the hour is already past, red if its the current hour, and green if it's a hour in the future. The clock is based off local time using moment.js! If you type something in the text box and then press the save button, the text is saved locally!
 
-You'll need to use a library like [Moment.js](https://momentjs.com/) to work with dates and times. `Moment.js` has historically been the most popular date/time library but is no longer supported by its developers. However, you can still use it for this project, or you can look into one of the following alternatives:
+## Snips of code
 
-  * [Luxon](https://moment.github.io/luxon/)
-
-  * [Day.js](https://day.js.org/)
-
-  * [date-fns](https://date-fns.org/)
-
-  * [js-Joda](https://js-joda.github.io/js-joda/)
-
-Whichever library you choose, be sure to read the documentation carefully!
-
-
-## User Story
+Below is a code snippet of the local timer. It displays the hour at the top of the site and updates every second to check if the hour changes. If the hour changes then the color of the text boxes will change accordingly.
 
 ```
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
+setInterval( function() {
+    time = moment().local().format("dddd, MMM D, YYYY, h:mm:ssA");
+    $("#currentTime").text(time)
+    checkHour(moment().hour())
+}, 1000)
 ```
 
-
-## Acceptance Criteria
+The code snippet below shows how the local storage is handled. If the corresponding button is clicked then the text in the text box will be saved to a key, which is note1, and then is retrieved and put back in the text box.
 
 ```
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with time blocks for standard business hours
-WHEN I view the time blocks for that day
-THEN each time block is color-coded to indicate whether it is in the past, present, or future
-WHEN I click into a time block
-THEN I can enter an event
-WHEN I click the save button for that time block
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
+$(".btn1").click(function () {
+    var message1 = $("#todo1").val()
+    window.localStorage.setItem("note1", message1)
+    $("#todo1").text(localStorage.getItem("note1"))
+})
 ```
 
+## Built With
 
-## Mock-Up
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [JS](https://www.javascript.com/)
+* [GitHub](https://github.com/)
+* [Git](https://git-scm.com/)
+* [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+* [Moment.js](https://momentjs.com/)
 
-The following animation demonstrates the application functionality:
+## Deployed Link
 
-![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
+* [See Live Site](https://pting1995.github.io/work-day-scheduling-project/)
 
+## Authors
 
-## Grading Requirements
+* Peter Ting
 
-This homework is graded based on the following criteria: 
+- [Link to Github](https://github.com/Pting1995)
+- [Link to LinkedIn](https://www.linkedin.com/in/pting002/)
 
-### Technical Acceptance Criteria: 40%
+## License
 
-* Satisfies all of the above acceptance criteria plus the following:
+This project is licensed under the MIT License 
 
-  * Uses the Moment.js library to work with date and time
+## Acknowledgments
 
-### Deployment: 32%
-
-* Application deployed at live URL
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the homework instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+* Thank you to UC Berkeley's Extension Bootcamp for giving me the opportunity to work on this project!
