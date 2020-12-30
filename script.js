@@ -5,7 +5,7 @@ setInterval( function() {
     $("#currentTime").text(time)
     checkHour(moment().hour())
 }, 1000)
-
+// checks current hour and changes text box color accordingly
 function checkHour(hour) {
     console.log(hour)
     if (hour < 9) {
@@ -188,6 +188,8 @@ $(".btn9").click(function () {
     window.localStorage.setItem("note9", message9)
     $("#todo9").text(localStorage.getItem("note9"))
 })
+
+// displays local storage text when page is reloaded
 $("#todo1").text(localStorage.getItem("note1"))
 $("#todo2").text(localStorage.getItem("note2"))
 $("#todo3").text(localStorage.getItem("note3"))
